@@ -1,17 +1,29 @@
 package com.crystalark.librarymicroservice.user.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="user")
 public class User {
-	private int id;
-	private String name;
-	private String address;
-	private String contact;
-	private int booksOnHold;
-	
-	
+	@Id
+	@GeneratedValue
+	@Column	private int id;
+	@Column	private String name;
+	@JsonIgnore
+	@Column private String password;
+	@Column	private String address;
+	@Column	private String contact;
+	@Column	private int booksOnHold;
+
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public int getId() {
@@ -25,6 +37,13 @@ public class User {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getAddress() {
 		return address;

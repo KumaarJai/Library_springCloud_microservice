@@ -17,7 +17,6 @@ public class Book {
 	@Column private String description;
 	@Column private double price;
 	@Column private int heldBy;
-	
 
 
 	public Book() {
