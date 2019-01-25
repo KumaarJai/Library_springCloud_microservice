@@ -21,7 +21,9 @@ public class User {
 	@Column	private String contact;
 	@Column	private int booksOnHold;
 
+	transient private boolean authorized;
 	
+
 	public User() {
 		super();
 	}
@@ -62,6 +64,15 @@ public class User {
 	}
 	public void setBooksOnHold(int booksOnHold) {
 		this.booksOnHold = booksOnHold;
+	}
+	
+	
+	public boolean isAuthorized() {
+		return authorized;
+	}
+
+	public void setAuthorized(boolean authorized) {
+		this.authorized = authorized;
 	}
 	
 	

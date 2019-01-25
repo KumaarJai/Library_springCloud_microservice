@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.crystalark.librarymicroservice.library.model.BookServiceBean;
+import com.crystalark.librarymicroservice.library.model.LoginInputBean;
 import com.crystalark.librarymicroservice.library.model.UserServiceBean;
 
 @Service
@@ -26,4 +27,21 @@ public class LibraryService {
 		System.out.println("LibraryService: Inside getAllUsersFromUserApiUsingFiegn... calling user api");
 		return userProxy.getAllUsers();
 	}
+	
+	public UserServiceBean loginUserUsingFiegn(LoginInputBean user) {
+		System.out.println("LibraryService: Inside loginUserUsingFiegn... calling user api");
+		 /*We can add 
+		  * extra authentication 
+		  * stuff here 
+		  * then call the 
+		  * login api...*/
+		return userProxy.login(user);
+	}
+	
+	
+	
+	
+	
+	
+	
 }

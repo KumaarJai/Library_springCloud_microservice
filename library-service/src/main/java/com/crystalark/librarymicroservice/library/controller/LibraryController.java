@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crystalark.librarymicroservice.ConfigProperties;
 import com.crystalark.librarymicroservice.library.model.BookServiceBean;
+import com.crystalark.librarymicroservice.library.model.LoginInputBean;
 import com.crystalark.librarymicroservice.library.model.UserServiceBean;
 import com.crystalark.librarymicroservice.library.service.LibraryService;
 
@@ -50,4 +53,12 @@ public class LibraryController {
 		ResponseEntity<List<UserServiceBean>> users = new ResponseEntity<>(service.getAllUsersFromUserApiUsingFiegn(), HttpStatus.OK);
 		return users;
 	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<UserServiceBean> login(@RequestBody LoginInputBean user) {
+		System.out.println("We are in LibraryController : User -" + user.getName()+ " -> Initiating login procedure...");
+		return new ResponseEntity<UserServiceBean>(service.loginUserUsingFiegn(user), HttpStatus.OK);
+	}
+	
+	
 }

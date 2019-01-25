@@ -16,7 +16,7 @@ public class Book {
 	@Column private String author;
 	@Column private String description;
 	@Column private double price;
-	@Column private int heldBy;
+	@Column private int heldBy = 0;
 
 
 	public Book() {
