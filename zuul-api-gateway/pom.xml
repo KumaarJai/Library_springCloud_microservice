@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.crystalark.librarymicroservice</groupId>
-	<artifactId>LibraryService</artifactId>
+	<artifactId>zuul-api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>book-service-1</name>
-	<description>Book Service for Library Management System</description>
+	<name>zuul-api-gateway</name>
+	<description>Zuul API Gateway for Library Management System</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,40 +21,19 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency> 
-		<dependency> 
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
-		<dependency> 
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-		    <groupId>org.projectlombok</groupId>
-		    <artifactId>lombok</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-ribbon</artifactId>
-		    <version>1.4.5.RELEASE</version>
-		</dependency>
-		
 	</dependencies>
 
 	<dependencyManagement>
@@ -63,7 +42,6 @@
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
-				<!-- <version>Finchley.M9</version> -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

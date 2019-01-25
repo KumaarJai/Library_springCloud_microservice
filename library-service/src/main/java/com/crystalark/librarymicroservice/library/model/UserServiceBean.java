@@ -9,4 +9,5 @@ public class UserServiceBean {
 	@Getter @Setter private String address;
 	@Getter @Setter private String contact;
 	@Getter @Setter private int booksOnHold;
+	@Getter @Setter private boolean authorized;
 }

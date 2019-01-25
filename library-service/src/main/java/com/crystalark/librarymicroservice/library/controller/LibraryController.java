@@ -18,7 +18,7 @@ import com.crystalark.librarymicroservice.library.model.UserServiceBean;
 import com.crystalark.librarymicroservice.library.service.LibraryService;
 
 @RestController
-@RequestMapping(path="/library-service")
+@RequestMapping(path="/lib-service")
 public class LibraryController {
 
 	@Autowired

@@ -19,9 +19,9 @@ public interface UserServiceProxy {
 	@GetMapping("/user-service/users")
 	public List<UserServiceBean> getAllUsers();
 	
-	@PostMapping("/login")
+	@PostMapping("/user-service/login")
 	public UserServiceBean login(@RequestBody LoginInputBean user);
 	
-	@PostMapping("/profile/{id}")
+	@PostMapping("/user-service/profile/{id}")
 	public UserServiceBean getUserProfile(@PathVariable int id);
 }
